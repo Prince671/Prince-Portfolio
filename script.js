@@ -137,3 +137,23 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('content');
+
+  // Simulate a loading process (e.g., fetching data)
+  setTimeout(() => {
+    // Add fade-out class to trigger fadeOut animation
+    loader.classList.add('fade-out');
+
+    // Listen for the end of the fadeOut animation
+    loader.addEventListener('animationend', () => {
+      // Hide the loader
+      loader.style.display = 'none';
+      // Show the main content
+      content.style.display = 'block';
+    });
+  }, 3000); // Duration of the loading animation (3 seconds)
+});
