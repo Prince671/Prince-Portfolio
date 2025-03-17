@@ -157,3 +157,23 @@ window.addEventListener('load', () => {
     });
   }, 3000); // Duration of the loading animation (3 seconds)
 });
+
+// Monitor the visibility of the page
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+      // Clear sessionStorage when the user switches tabs
+      sessionStorage.clear();
+      console.log("Session terminated due to tab switch.");
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+      document.querySelector(".window-loader").classList.add("fade-out"); 
+      setTimeout(() => {
+          document.querySelector(".window-loader").style.display = "none";
+          document.getElementById("content").style.display = "block"; 
+      }, 500); 
+  }, 2500); 
+});
