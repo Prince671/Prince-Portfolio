@@ -2,81 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prince soni | Portfolio</title>
-    <meta name="apple-mobile-web-app-status-bar" content="#323232" />
-    <meta name="theme-color" content="#323232" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" type="image/png" href="image/Logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Soni | Portfolio</title>
+    <meta name="apple-mobile-web-app-status-bar" content="#0a0a0a">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <div class="bg-animation"></div>
 
-    <main>
-        <div id="loader" class="window-loader" role="alert" aria-live="assertive" aria-label="Loading">
-            <div class="spinner" aria-hidden="true"></div>
-        </div>
+    <div id="loader" class="window-loader">
+        <div class="spinner"></div>
+    </div>
 
-        <aside class="sidebar" data-sidebar>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
             <div class="sidebar-info">
                 <figure class="avatar-box">
-                    <img src="image/profile.jpg" alt="Prince soni" width="100%" />
+                    <img src="/image/profile.jpg" alt="Prince Soni" />
                 </figure>
 
                 <div class="info-content">
-                    <h1 class="name" title="Prince Soni">Prince Soni</h1>
-
-                    <div class="profile-tabs">
-                        <p class="title">Web Developer || Cloud Engineer</p>
-                    </div>
+                    <h1 class="name">Prince Soni</h1>
+                    <p class="title">Web Developer || Cloud Engineer</p>
                 </div>
+
                 <ul class="social-list">
                     <li class="social-item">
                         <a href="https://github.com/Prince671/" class="social-link" target="_blank" rel="noopener">
-                            <ion-icon name="logo-github"></ion-icon>
+                            <i class="fab fa-github"></i>
                         </a>
                     </li>
                     <li class="social-item">
                         <a href="https://twitter.com/Princs67" class="social-link" target="_blank" rel="noopener">
-                            <ion-icon name="logo-twitter"></ion-icon>
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="social-item">
                         <a href="https://linkedin.com/in/princesoni67" class="social-link" target="_blank"
                             rel="noopener">
-                            <ion-icon name="logo-linkedin"></ion-icon>
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                 </ul>
-                <button class="info_more-btn" data-sidebar-btn>
+
+                <button class="info_more-btn" onclick="toggleContacts()">
                     <span>Show Contacts</span>
-                    <ion-icon name="chevron-down"></ion-icon>
+                    <i class="fas fa-chevron-down"></i>
                 </button>
             </div>
-            <div class="sidebar-info_more">
-                <div class="separator"></div>
+
+            <div class="sidebar-info_more" id="contactsInfo">
                 <ul class="contacts-list">
                     <li class="contact-item">
                         <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
+                            <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-info">
                             <p class="contact-title">Email</p>
-                            <a href="mailto:princesoni.cs21@gmail.com?subject=Referral"
-                                class="contact-link">princesoni.cs21@gmail.com
+                            <a href="mailto:princesoni.cs21@gmail.com?subject=Referral" class="contact-link">
+                                princesoni.cs21@gmail.com
                             </a>
                         </div>
                     </li>
                     <li class="contact-item">
                         <div class="icon-box">
-                            <ion-icon name="location-outline"></ion-icon>
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-info">
                             <p class="contact-title">Location</p>
@@ -84,42 +84,44 @@
                         </div>
                     </li>
                 </ul>
-                <div class="separator"></div>
             </div>
         </aside>
+
+        <!-- Main Content -->
         <div class="main-content">
             <nav class="navbar">
                 <ul class="navbar-list">
                     <li class="navbar-item">
-                        <button class="navbar-link active" data-nav-link>About</button>
+                        <button class="navbar-link active" onclick="showSection('about', this)">About</button>
                     </li>
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Resume</button>
+                        <button class="navbar-link" onclick="showSection('resume', this)">Resume</button>
                     </li>
                     <li class="navbar-item">
-                        <button class="navbar-link" data-nav-link>Projects</button>
+                        <button class="navbar-link" onclick="showSection('projects', this)">Projects</button>
                     </li>
                 </ul>
             </nav>
-            <article class="about active" data-page="about">
+
+            <!-- About Section -->
+            <section class="content-section active" id="about">
                 <header>
-                    <h2 class="h2 article-title">About me</h2>
+                    <h2 class="article-title">About me</h2>
                 </header>
-                <section class="about-text">
+
+                <div class="about-text">
                     <p class="text-style">
-                        I'm
-                        <span class="text-highlight">Web Developer || Cloud Engineer</span>
-                        from India.
-                        <span class="text-highlight"></span>
+                        I'm <span class="text-highlight">Web Developer || Cloud Engineer</span> from India.
                     </p>
                     <p class="text-style">
-                        I am having an experience of building
-                        high-performing, responsive, beautiful web applications to deliever
-                        a unique, intuitive user experience. I enjoy being
-                        challenged and working on projects that require me to step outside
+                        I am having an experience of building high-performing, responsive, beautiful web applications to
+                        deliver
+                        a unique, intuitive user experience. I enjoy being challenged and working on projects that
+                        require me to step outside
                         of my comfort zone.
                     </p>
-                    <h3 class="text-highlight skills">Skills : </h3>
+
+                    <h3 class="text-highlight skills">Skills :</h3>
                     <p class="text-style">
                         Languages :
                         <span class="text-highlight">Java, Python, C/C++, HTML-5, CSS-3, JavaScript-ES6, React.js, SQL,
@@ -146,315 +148,443 @@
                         Additional Skill :
                         <span class="text-highlight">AWS, Shell Scripting</span>
                     </p>
-                </section>
-                <section class="service">
-                    <ul class="service-list">
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://th.bing.com/th/id/OIP.fIDganAgKf3hgW9wthMCYQAAAA?rs=1&pid=ImgDetMain"
-                                    style="border-radius: 50%;" alt="design icon" width="40" />
-                            </div>
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Book Tickets</h4>
-                                <p class="service-item-text">
-                                    The most modern website design with interactive UI/UX.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://th.bing.com/th/id/OIP.3nZDrdCY_euwYqJ6DgGomAAAAA?rs=1&pid=ImgDetMain"
-                                    style="border-radius: 50%;" alt="Web development icon" width="40" />
-                            </div>
-                            <div class="service-content-box">
-                                <h4 class="h4 service-item-title">Web development</h4>
-                                <p class="service-item-text">
-                                    High-quality web apps at the professional level.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-                <div class="modal-container" data-modal-container>
-                    <div class="overlay" data-overlay></div>
-                    <section class="testimonials-modal">
-                        <button class="modal-close-btn" data-modal-close-btn>
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
-                        <div class="modal-img-wrapper">
-                            <figure class="modal-avatar-box">
-                                <img src="profile.png" alt="avatar-img" width="80" data-modal-img />
-                            </figure>
-                            <img src="profile.png" alt="quote-icon" />
-                        </div>
-                    </section>
                 </div>
-            </article>
-            <article class="resume" data-page="resume">
+            </section>
+
+            <!-- Resume Section -->
+            <section class="content-section" id="resume">
                 <header>
-                    <h2 class="h2 article-title">Resume</h2>
+                    <h2 class="article-title">Resume</h2>
                 </header>
-                <section class="timeline">
+
+                <div class="timeline">
                     <div class="title-wrapper">
                         <div class="icon-box">
-                            <ion-icon name="book-outline"></ion-icon>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3 class="h3">Education & Experience </h3>
+                        <h3>Education & Experience</h3>
                     </div>
-                    <ol class="timeline-list">
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://drive.google.com/file/d/1F20Z-bULaWCiUccVLBIr7IVLd1oVfZjw/view?usp=sharing"
-                                target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="image/resume.jpg" alt="component-library" loading="lazy" class="image"
-                                        style="object-fit: cover;" />
-                                </figure>
-                            </a>
-                        </li>
+
+                    <div class="resume-project-item">
+                        <a href="https://drive.google.com/file/d/1F20Z-bULaWCiUccVLBIr7IVLd1oVfZjw/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">
+                            <img src="/image/resume.jpg" alt="Resume" />
+                            <p class="project-link">View Resume</p>
+                        </a>
+                    </div>
+
+                    <ul class="timeline-list">
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">
+                            <h4 class="timeline-item-title">
                                 B.Tech - Vindhya Institute of Technical Science , RGPV
                             </h4>
                             <span class="timeframe">Jul. 2024 - Jul 2027 (Satna, Madhya Pradesh)</span>
-                            <div class="job-description">&#x2022; </div>
                         </li>
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">
+                            <h4 class="timeline-item-title">
                                 Diploma in Computer Science Engineering - RGPV Instritute of Technology
                             </h4>
                             <span class="timeframe">Jul. 2021 - Jul 2024 (Satna, Madhya Pradesh)</span>
-                            <div class="job-description">&#x2022; </div>
                         </li>
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">
+                            <h4 class="timeline-item-title">
                                 10th - Central Board of Seconday Education.
                             </h4>
-                            <span class="timeframe">Apri 2020 — June 2021 (Satna, Madhya Pradesh)</span>
+                            <span class="timeframe">April 2020 — June 2021 (Satna, Madhya Pradesh)</span>
                         </li>
-                    </ol>
-                </section>
-            </article>
-            <article class="portfolio" data-page="projects">
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="content-section" id="projects">
                 <header>
-                    <h2 class="h2 article-title">Projects</h2>
+                    <h2 class="article-title">Projects</h2>
                 </header>
-                <section class="projects">
-                    <ul class="filter-list">
 
-                    </ul>
-                    <div class="filter-select-box">
-                        <button style="display: none;" class="filter-select" data-select>
-                        </button>
-                    </div>
-                    <ul class="project-list">
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://melo-fi.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://th.bing.com/th/id/OIP.jlfYbMEYaKbiaPhIE8Hj5gHaG_?rs=1&pid=ImgDetMain"
-                                        alt="component-library" loading="lazy" class="image" />
-                                </figure>
-                                <h3 class="project-title">Melo_Fi</h3>
-                                <p class="project-category pt-03">
-                                    React, JavaScript, JioSaavn API, Responsive-Design, Customizalbe &
-                                    Scalable components
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/MeloFi" class=" project-link" target="_blank"
-                                        rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://roomi-fy.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://thumbs.dreamstime.com/b/robotic-heart-mechanical-mechanism-generative-274102252.jpg"
-                                        alt="component-library" loading="lazy" class="image" />
-                                </figure>
-                                <h3 class="project-title">RoomiFy</h3>
-                                <p class="project-category pt-03">
-                                    React, JavaScript, YouTube API, Responsive-Design, Customizalbe &
-                                    Scalable components
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/RoomiFy" class=" project-link" target="_blank"
-                                        rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://prince-gemini.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://i.pinimg.com/originals/97/6a/6a/976a6a880970d637be3875ade7fa40ea.jpg"
-                                        alt="component-library" loading="lazy" class="image" />
-                                </figure>
-                                <h3 class="project-title">Gemini Clone</h3>
-                                <p class="project-category pt-03">
-                                    React, JavaScript, Gemini API, Responsive-Design, Customizalbe &
-                                    Scalable components
-                                </p>
+                <ul class="project-list">
 
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/Gemini" class=" project-link" target="_blank"
-                                        rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://ai-assistant-jarvis-princesoni.vercel.app/" class=" project-link"
-                                target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://th.bing.com/th/id/OIP.F_aOQBs2uLhzRlV5QKQJcAHaHa?rs=1&pid=ImgDetMain"
-                                        alt="component-library" loading="lazy" class="image" />
-                                </figure>
-                                <h3 class="project-title">Desktop Assistant</h3>
-                                <p class="project-category pt-03">
-                                    HTML-5, CSS-3, JavaScript, API, Promises, Responsive-Design, Customizalbe &
-                                    Scalable components
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/AI_Assistant-Jarvis-" class=" project-link"
-                                        target="_blank" rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://github.com/Prince671" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://icon-library.com/images/movies-icon-png/movies-icon-png-8.jpg"
-                                        alt="component-library" loading="lazy" class="image" />
-                                </figure>
-                                <h3 class="project-title">Book Your Tickets</h3>
-                                <p class="project-category pt-03">
-                                    HTML-5, CSS-3, JavaScript, Responsive-Design, Customizalbe &
-                                    Scalable components
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671" class=" project-link" target="_blank"
-                                        rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://github.com/Prince671/Currency-converter" target="_blank"
-                                rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://th.bing.com/th/id/OIP.wEkuURnY0FVTLbuyid33ZgHaHa?w=186&h=186&c=7&r=0&o=5&pid=1.7"
-                                        alt="component-library" loading="lazy" class="image"
-                                        style="object-fit: cover;" />
-                                </figure>
-                                <h3 class="project-title">Currency Exchange Rate</h3>
-                                <p class="project-category pt-03">
-                                    HTML-5, CSS-3, JavaScript , API, Responsive-Design, Scalable, UI/UX
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/Currency-converter" class=" project-link"
-                                        target="_blank" rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://github.com/Prince671/" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://th.bing.com/th/id/OIP.56l8gjdp56JZilgmlobgcwD6D6?rs=1&pid=ImgDetMain"
-                                        alt="component-library" loading="lazy" class="image"
-                                        style="object-fit: cover;" />
-                                </figure>
-                                <h3 class="project-title">MyPlay (Music Player)</h3>
-                                <p class="project-category pt-03">
-                                    HTML-5, CSS-3, JavaScript , API, Responsive-Design, Scalable, UI/UX
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/MyPlay" class=" project-link" target="_blank"
-                                        rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://github.com/Prince671/" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDYwODA2MjU0MjQxMTI4/rock-paper-scissors.png"
-                                        alt="component-library" loading="lazy" class="image"
-                                        style="object-fit: cover;" />
-                                </figure>
-                                <h3 class="project-title">Game</h3>
-                                <p class="project-category pt-03">
-                                    HTML-5, CSS-3, JavaScript , Responsive-Design, Better UI/UX
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/Stone-Paper-Scissors" class=" project-link"
-                                        target="_blank" rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://github.com/Prince671" target="_blank" rel="noopener noreferrer">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="open"></ion-icon>
-                                    </div>
-                                    <img src="https://th.bing.com/th/id/OIP.7gYj-oBSxdPn31JTy05OkgAAAA?rs=1&pid=ImgDetMain"
-                                        style="object-fit: cover;" alt="component-library" loading="lazy"
-                                        class="image" />
-                                </figure>
-                                <h3 class="project-title">College Portal</h3>
-                                <p class="project-category pt-03">
-                                    HTML-5, CSS-3, JavaScript, Responsive-Design, Customizalbe &
-                                    Scalable components
-                                </p>
-                                <p class="project-category pt-03 flex">
-                                    <a href="https://github.com/Prince671/My-College-clone-Website"
-                                        class=" project-link" target="_blank" rel="noopener noreferrer">
-                                        Open with github</a>
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </article>
+                    <!-- Live Location Tracker -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://png.pngtree.com/png-clipart/20230315/original/pngtree-map-location-pin-with-red-png-image_8989833.png"
+                                alt="Live Location Tracker Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/LiveLocationTracker" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Live Location Tracker</h3>
+                        <p class="project-category">
+                            <strong>(BackEnd Project)</strong><br />
+                            EJS, MongoDB, NodeJS, ExpressJS, SocketIO, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/LiveLocationTracker" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- E-Commerce -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.HZl99Up2wIcaHIztLLmttAHaE7?rs=1&pid=ImgDetMain"
+                                alt="E-Commerce Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/ECommerce" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">E-Commerce</h3>
+                        <p class="project-category">
+                            <strong>(FullStack Project)</strong><br />
+                            EJS, MongoDB, NodeJS, ExpressJS, Multer, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/ECommerce" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Chess Game -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://i.pinimg.com/originals/9c/70/2d/9c702d63a18f1163fc82c5e1aac7a28c.jpg"
+                                alt="Online Chess Game Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/chessGame" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Chess</h3>
+                        <p class="project-category">
+                            <strong>(FullStack Project)</strong><br />
+                            EJS, MongoDB, SocketIO, NodeJS, ExpressJS, Multer, Chess.js, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/chessGame" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Drive Clone -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://static.vecteezy.com/system/resources/previews/022/484/494/non_2x/google-drive-icon-logo-symbol-free-png.png"
+                                alt="Drive Clone Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/DriveClone" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Drive</h3>
+                        <p class="project-category">
+                            <strong>(FullStack Project)</strong><br />
+                            EJS, MongoDB, NodeJS, ExpressJS, Multer, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/DriveClone" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- RoomiFy -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://thumbs.dreamstime.com/b/robotic-heart-mechanical-mechanism-generative-274102252.jpg"
+                                alt="RoomiFy Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://roomi-fy.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">RoomiFy</h3>
+                        <p class="project-category">
+                            React, JavaScript, YouTube API, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/RoomiFy" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Gemini Clone -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://i.pinimg.com/originals/97/6a/6a/976a6a880970d637be3875ade7fa40ea.jpg"
+                                alt="Gemini Clone Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://prince-gemini.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Gemini Clone</h3>
+                        <p class="project-category">
+                            React, JavaScript, Gemini API, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/Gemini" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Desktop Assistant -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://th.bing.com/th/id/OIP.F_aOQBs2uLhzRlV5QKQJcAHaHa?rs=1&pid=ImgDetMain"
+                                alt="Desktop AI Assistant Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://ai-assistant-jarvis-princesoni.vercel.app/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Desktop Assistant</h3>
+                        <p class="project-category">
+                            HTML5, CSS3, JavaScript, API, Promises, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/AI_Assistant-Jarvis-" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Book Your Tickets -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://icon-library.com/images/movies-icon-png/movies-icon-png-8.jpg"
+                                alt="Book Tickets App Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/BookYourTickets" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Book Your Tickets</h3>
+                        <p class="project-category">
+                            HTML5, CSS3, JavaScript, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/BookYourTickets" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Currency Exchange -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://th.bing.com/th/id/OIP.wEkuURnY0FVTLbuyid33ZgHaHa?w=186&h=186&c=7&r=0&o=5&pid=1.7"
+                                alt="Currency Converter Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/Currency-converter" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Currency Exchange Rate</h3>
+                        <p class="project-category">
+                            HTML5, CSS3, JavaScript, API, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/Currency-converter" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Music Player -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://th.bing.com/th/id/OIP.56l8gjdp56JZilgmlobgcwD6D6?rs=1&pid=ImgDetMain"
+                                alt="MyPlay Music Player Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/MyPlay" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">MyPlay (Music Player)</h3>
+                        <p class="project-category">
+                            HTML5, CSS3, JavaScript, API, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/MyPlay" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- Rock Paper Scissors Game -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDYwODA2MjU0MjQxMTI4/rock-paper-scissors.png"
+                                alt="Rock Paper Scissors Game Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/Stone-Paper-Scissors" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">Rock Paper Scissors</h3>
+                        <p class="project-category">
+                            HTML5, CSS3, JavaScript, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/Stone-Paper-Scissors" class="project-link" target="_blank"
+                            rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                    <!-- College Portal -->
+                    <li class="project-item">
+                        <figure class="project-img">
+                            <img src="https://th.bing.com/th/id/OIP.7gYj-oBSxdPn31JTy05OkgAAAA?rs=1&pid=ImgDetMain"
+                                alt="College Portal Screenshot" />
+                            <div class="project-item-icon-box">
+                                <a href="https://github.com/Prince671/My-College-clone-Website" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </figure>
+                        <h3 class="project-title">College Portal</h3>
+                        <p class="project-category">
+                            HTML5, CSS3, JavaScript, Responsive Design
+                        </p>
+                        <a href="https://github.com/Prince671/My-College-clone-Website" class="project-link"
+                            target="_blank" rel="noopener noreferrer">
+                            View on GitHub
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+
         </div>
-    </main>
-    <!--custom js link-->
-    <script src="service.js"></script>
-    <script src="script.js"></script>
-    <!--ionicon link-->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
-    </script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
+    </div>
+
+    <script>
+        // Hide loader after page loads
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Toggle contacts visibility
+        function toggleContacts() {
+            const contactsInfo = document.getElementById('contactsInfo');
+            const button = document.querySelector('.info_more-btn');
+            const icon = button.querySelector('i');
+
+            contactsInfo.classList.toggle('active');
+
+            if (contactsInfo.classList.contains('active')) {
+                button.querySelector('span').textContent = 'Hide Contacts';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                button.querySelector('span').textContent = 'Show Contacts';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Show different sections
+        function showSection(sectionId, buttonElement) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav buttons
+            const navButtons = document.querySelectorAll('.navbar-link');
+            navButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected section and activate button
+            document.getElementById(sectionId).classList.add('active');
+            buttonElement.classList.add('active');
+        }
+
+        // Add smooth scrolling animation to project items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project items for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectItems = document.querySelectorAll('.project-item, .service-item, .timeline-item');
+            projectItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(item);
+            });
+        });
+
+        // Add particle effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.createElement('div');
+            cursor.style.position = 'fixed';
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.width = '6px';
+            cursor.style.height = '6px';
+            cursor.style.background = 'var(--accent-primary)';
+            cursor.style.borderRadius = '50%';
+            cursor.style.pointerEvents = 'none';
+            cursor.style.opacity = '0.6';
+            cursor.style.zIndex = '999';
+            cursor.style.animation = 'fadeOut 1s ease-out forwards';
+
+            document.body.appendChild(cursor);
+
+            setTimeout(() => {
+                cursor.remove();
+            }, 1000);
+        });
+
+        // Add fadeOut animation for cursor effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 
